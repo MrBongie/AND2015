@@ -1,19 +1,17 @@
 package bongie.task;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class Main extends Activity {
+public class Main extends ActionBarActivity {
 
     private AlertDialog.Builder dialogBuilder;
 
@@ -21,9 +19,7 @@ public class Main extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        GenDB();
         ActionBar actionBar = getActionBar();
-        actionBar.setHomeButtonEnabled(true);
     }
 
 
@@ -67,16 +63,15 @@ public class Main extends Activity {
         InfoDialog.show();
     }
 
-    public void GenDB() {
-        SQLiteDatabase db = openOrCreateDatabase("Achiv", MODE_PRIVATE, null);
-        db.close();
-    }
-
     public void listAchiv(View v) {
-        startActivity(new Intent(this, List.class));
+        startActivity(new Intent(this, ListAchiv.class));
     }
 
     public void addAchiv(View v) {
         startActivity(new Intent(this, Add.class));
+    }
+
+    public void locatAchiv(View v) {
+        startActivity(new Intent(this, Location.class));
     }
 }

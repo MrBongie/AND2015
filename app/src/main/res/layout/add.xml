@@ -3,5 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:layout_gravity="center"
+        android:hint="Name"
+        />
+    <EditText
+        android:id="@+id/place"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:layout_gravity="center"
+        android:hint="Place"
+        />
+    <Button
+        android:id="@+id/saveButt"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#44cede"
+        android:textColor="#FFFFFF"
+        android:text="Add"
+        />
 
 </LinearLayout>
